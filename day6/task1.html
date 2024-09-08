@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <script>
+        // Reversed string
+        var str="hello";
+        a="";
+        for(s of str){
+            a=s+a;
+        }
+        console.log(a);
+
+
+        // By using for in loop find a even numbers in an array - [23,54,67,64,46,95,98]
+        let arr=[23,54,67,64,46,95,98];
+        for(i in arr)
+        {
+            if(arr[i]%2==0)
+            {
+                console.log(arr[i]);
+            }
+        }
+
+
+        // iterate an object values and keys using for of loop
+        const student = 
+        { 
+            name: 'John',
+            age: 20,
+            hobbies: ['reading', 'singing', 'swimming'],
+        }
+
+
+        for (let [key, value] of Object.entries(student))
+        {
+              console.log(key + " - " +  value);
+        }
+    </script>
+</body>
+</html>
