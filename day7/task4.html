@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <script>
+        var a=prompt("Enter a word: ");
+        a=a.toLowerCase();
+        flag=false;
+        function vowel(a){
+           for(i=0;i<a.length;i++){
+             if(a[i]=="a"||a[i]=="e"||a[i]=="i"||a[i]=="o"||a[i]=="u"){
+                flag=true;
+                break;
+             }
+            }
+            if(flag){
+               console.log("it contains vowels");
+               
+            }
+            else{
+                console.log("it doesn't contains vowels")
+            }
+        }
+        vowel(a);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+</head>
+<body>
+    <script>
+        var temp=+prompt("Enter a number: ");
+        var scale=prompt("Enter celsius or farenheat: ");
+        function temperature(temp,scale)
+        {
+                if(scale=="c")
+                {
+                    return (temp - 32) * 5/9;
+                
+                }
+                else if(scale=="f")
+                {
+                    return (temp * 9/5) + 32;
+                }
+                else
+                {
+                    return "Enter a valid temperature";
+                }
+        }
+
+        console.log(temperature(temp,scale));
+    </script>
+</body>
+</html>
