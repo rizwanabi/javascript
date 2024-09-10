@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+</head>
+<body>
+   <h1 id="ex">Content</h1> 
+   <!-- <p class="ex">Example</p> -->
+   <h2 id="ex1">Example</h2>
+   <h5 id="demo">Hello</h5>
+
+
+   <h4 id="demo1">Good Girl</h4>
+
+</body>
+<script>
+    var a=document.getElementById("ex");
+    a.style.background="green";
+    a.style.color="red";
+    a.style.padding="20px";
+    
+    var c=document.getElementById("ex1");
+    // console.log(a);
+    c.style.background="blue";
+    c.style.color="white";
+    c.style.padding="20px";
+
+    var d=document.getElementById("demo");
+    d.innerHTML="<h1>Hello guys</h1>";
+    d.style.color="red";
+    d.style.background="yellow";
+    // console.log(d);
+
+    var r=document.createElement("h1");
+    r.innerText="bye";
+    console.log("r");
+    document.body.appendChild(r);
+
+
+    var e=document.getElementById("demo1");
+    e.style.display="none";
+    // e.parentNode.removeChild(e);
+
+
+    
+
+</script>
+</html>

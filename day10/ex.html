@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Content=["John Doe","John Doe","John Doe","John Doe"]
+        for(i=0;i<4;i++){
+        var el3=document.createElement('div');
+        var el4=document.createElement('div');
+        el4.style.height="500px";
+        el4.style.display="flex";
+        el4.style.flexDirection="column";
+        var head4=document.createElement("h4");
+        var para4=document.createElement("p");
+        var para5=document.createElement("p");
+        el3.style.background=url("https://www.w3schools.com/w3images/team2.jpg");
+        el3.style.backgroundSize="cover";
+        el3.style.backgroundRepeat="no-repeat";
+        el3.style.height="50%";
+        el3.style.width="25%";
+        head4.innerText=Content[i];
+        el4.appendChild(el3);
+        // el4.appendChild(head4);
+        // el3.style.display="flex";
+        // el3.appendChild(para4);
+        // el3.appendChild(para5);
+        div4.appendChild(el4);
+        console.log(el3);
+        // document.body.appendChild(div4);
+        }
+        document.body.appendChild(div4);
+        console.log(div4);
+    </script>
+
+</body>
+</html>

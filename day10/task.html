@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task(BR Architects)</title>
+</head>
+<body>
+    <script>
+        var Top=document.createElement("div");   
+        var header=document.createElement("header"); 
+        header.style.fontSize="1.5em"
+        Top.appendChild(header); 
+        Top.style.display="flex";      
+        header.innerText="BR Architects" ;
+        console.log(header);
+        
+        var menu=document.createElement("ul");
+        var projects=document.createElement("li");
+        projects.innerText="Projects";
+        var about=document.createElement("li");
+        about.innerText="About";
+        var contact=document.createElement("li");
+        contact.innerText="Contact";
+        menu.appendChild(projects);
+        menu.appendChild(about);
+        menu.appendChild(contact);
+        Top.appendChild(menu);
+        menu.style.display="flex";
+        menu.style.listStyle="None"; 
+        menu.style.columnGap="10%";     
+        document.body.appendChild(Top);
+        Top.style.columnGap="75%";
+        Top.style.fontFamily="cursive";
+        Top.style.alignItems="center";
+        
+        
+        var main=document.createElement("main");
+        main.style.background='url("https://www.w3schools.com/w3images/architect.jpg")';
+        main.style.display="flex";
+        main.style.alignItems="center";
+        main.style.justifyContent="center";
+        main.style.height="98vh";
+        main.style.width="98vw";
+        main.style.backgroundRepeat="No-repeat";
+        main.style.backgroundSize="cover";
+
+
+        var section=document.createElement("section");
+        section.innerText="BR";
+        section.style.background="black";
+        section.style.opacity="0.6"
+        section.style.color="white";
+        section.style.padding="1.5%";
+        main.appendChild(section); 
+        document.body.appendChild(main);
+        
+        var section1=document.createElement("section1");
+        section1.innerText="Architects";
+        section1.style.color="white";
+        section1.style.fontSize="2em";
+        main.appendChild(section1);
+        document.body.appendChild(main);
+
+        var projects=document.createElement("section");
+        projects.innerText="Projects";
+        projects.style.marginTop="3%";
+        projects.style.fontSize="2em";
+        document.body.appendChild(projects);
+
+        let houses=["Summer House","Brick House","Rennovated","Barn House","Summer House","Brick House","Rennovated","Barn House"];
+        let images=["https://www.w3schools.com/w3images/house5.jpg","https://www.w3schools.com/w3images/house2.jpg","https://www.w3schools.com/w3images/house3.jpg","https://www.w3schools.com/w3images/house4.jpg","https://www.w3schools.com/w3images/house2.jpg","https://www.w3schools.com/w3images/house5.jpg","https://www.w3schools.com/w3images/house4.jpg","https://www.w3schools.com/w3images/house3.jpg"];
+        var projects1=document.createElement("div");
+        projects1.style.display="grid";
+        projects1.style.gridTemplateColumns="auto auto auto auto";
+        projects1.style.gap="3%";
+        for(i=0;i<8;i++)
+        {
+            var el1=document.createElement("div");
+            el1.style.background=`url(${images[i]})`;
+            el1.style.width="22vw";
+            el1.style.height="35vh";
+            el1.style.backgroundRepeat="No repeat";
+            el1.style.backgroundSize="cover";
+
+
+            var el2=document.createElement("div");
+            el2.innerText=houses[i];
+            el2.style.width="100px";
+            el2.style.padding="2%";
+            el2.style.background="black";
+            el2.style.color="white";
+            projects1.appendChild(el1);
+            el1.appendChild(el2);
+            document.body.appendChild(projects1);
+            console.log(projects1);            
+        }
+
+
+        var about=document.createElement("section");
+        about.innerText="About";
+        about.style.marginTop="3%";
+        about.style.fontSize="2em";
+        document.body.appendChild(about);
+
+        var para=document.createElement("p");
+        para.innerText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+        para.style.fontFamily="cursive";
+        document.body.appendChild(para);
+
+
+        let aboutimages=["https://www.w3schools.com/w3images/team2.jpg","https://www.w3schools.com/w3images/team1.jpg","https://www.w3schools.com/w3images/team3.jpg","https://www.w3schools.com/w3images/team4.jpg"];
+        var about1=document.createElement("div");
+        about1.style.display="grid";
+        about1.style.gridTemplateColumns="auto auto auto auto";
+
+        for(i=0;i<4;i++)
+        {
+            var el3=document.createElement("div");
+            el3.style.background=`url(${aboutimages[i]})`;
+            el3.style.width="22vw";
+            el3.style.height="35vh";
+            el3.style.backgroundRepeat="No repeat";
+            el3.style.backgroundSize="cover";
+            about1.appendChild(el3);
+            console.log(el3);
+        }
+        document.body.appendChild(about1);
+        
+        
+        
+        let names=["John Doe","Jane Dae","Mike Ross","Dan Star"];
+        let name=["CEO & Founder","Architect","Architect","Architect"];
+        var about2=document.createElement("div");
+        about2.style.display="grid";
+        about2.style.gridTemplateColumns="auto auto auto auto";
+
+        for(i=0;i<4;i++)
+        {
+            var content=document
+        }
+
+        // var 
+
+        
+    </script>
+</body>
+</html>
