@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <!-- <button>image 1</button> -->
+    <script>
+        var img=document.createElement("img");
+        img.src="image1.png";
+        img.style.width="40%";
+        img.style.height="20%";
+        document.body.appendChild(img);
+        var b=document.createElement("br");
+        document.body.appendChild(b);
+          
+
+        var btn1=document.createElement("button");
+        btn1.innerText="Image1";
+        btn1.addEventListener("click",function(){
+             img.src="image2.png";
+        })        
+        document.body.appendChild(btn1);
+
+
+        var btn2=document.createElement("button");
+        btn2.innerText="Image2";
+        btn2.addEventListener("click",function(){
+            img.src="image3.png";
+        })
+        document.body.appendChild(btn2);
+
+        var btn3=document.createElement("button");
+        btn3.innerText="Image3";
+        btn3.addEventListener("click", function(){
+            img.src="image4.png";
+        })
+        document.body.appendChild(btn3);
+       
+    </script>
+</body>
+</html>
