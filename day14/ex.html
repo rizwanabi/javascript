@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+</head>
+<body>
+    <script>
+        // First Method
+        // var a=prompt("Enter the string");
+        // var str="";
+        // for(i=0;i<a.length;i++)
+        // {
+
+        //     var b=a.charCodeAt(i)-1;
+        //     var c=String.fromCharCode(b);
+        //     str+=c;
+
+        // }
+        // console.log(str);
+
+
+        // Second Method
+//         var a = prompt("Enter the string");
+//       var str = "";
+
+// for (i = 0; i < a.length; i++) {
+//   var b = a.charCodeAt(i);
+//   var c = String.fromCharCode((b - 97 + 25) % 26 + 97);
+//   str += c;
+// }
+
+// console.log(str);
+
+            var a = prompt("Enter the string");
+            var str = "";
+
+            for (var i = 0; i < a.length; i++) {
+            var b = a.charCodeAt(i); 
+            var c = String.fromCharCode(122 - (b - 97)); 
+            str += c;
+            }
+
+            console.log(str);
+    </script>
+</body>
+</html>
