@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <script>
+        var arr1=["apple", "banana", "mango", "banana", 3, 4, 5, 6, true, {name: "object"}];
+        str=[];
+        num=[];
+        obj=[];
+        bool=[];
+        for(i=0;i<arr1.length;i++){
+            if(typeof(arr1[i])==="string"){
+                str.push(arr1[i]);
+            }else if(typeof(arr1[i])==="number"){
+                num.push(arr1[i]);
+            }else if(typeof(arr1[i])==="object"){
+                obj.push(arr1[i]);
+            }else if(typeof(arr1[i])==="boolean"){
+                bool.push(arr1[i]);
+            }
+        }
+        console.log(str);
+        console.log(num);
+        console.log(obj);
+        console.log(bool);
+    </script>
+</body>
+</html>
