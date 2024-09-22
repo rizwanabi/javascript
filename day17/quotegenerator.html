@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        body, .quote-generator {
+            font-family: 'Arial', sans-serif; background-color: #f0f8ff;
+            display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;
+        }
+        .quote-generator {
+            flex-direction: column; max-width: 400px; padding: 20px; border-radius: 10px; background-color: #fff;
+            text-align: center; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;
+        }
+        #quote { font-size: 24px; margin-bottom: 10px; color: #333; font-style: italic; }
+        #author { font-size: 18px; font-weight: bold; color: #555; margin-bottom: 20px; }
+        #new-quote { background-color: #ff6347; color: #fff; padding: 10px 20px; font-size: 18px; border: none;
+            cursor: pointer; border-radius: 5px; transition: background-color 0.3s ease; }
+        #new-quote:hover { background-color: #e5533c; }
+    </style>
+</head>
+<body>
+    <div class="quote-generator" id="quote-box">
+        <h2 id="quote">Click the button to generate a quote!</h2>
+        <p id="author"></p>
+        <button id="new-quote">Get Quote</button>
+    </div>
+    <script>
+        const quotes = [
+            { text: "You only live once, but if you do it right, once is enough.", author: "Mae West" },
+            { text: "I am so clever that sometimes I don't understand a single word of what I am saying.", author: "Oscar Wilde" },
+            { text: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", author: "Albert Einstein" }
+        ],
+        colors = ['#FFEB3B', '#FF5722', '#8BC34A', '#00BCD4', '#E91E63', '#9C27B0'],
+        textColors = ['#333', '#fff', '#000', '#4a4a4a', '#212121', '#0D47A1'],
+        quoteEl = document.getElementById('quote'), authorEl = document.getElementById('author'), box = document.getElementById('quote-box');
+
+        document.getElementById('new-quote').addEventListener('click', () => {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)],
+                  randomColor = colors[Math.floor(Math.random() * colors.length)],
+                  randomTextColor = textColors[Math.floor(Math.random() * textColors.length)];
+            
+            quoteEl.textContent = randomQuote.text;
+            authorEl.textContent = `- ${randomQuote.author}`;
+            box.style.backgroundColor = randomColor;
+            quoteEl.style.color = authorEl.style.color = randomTextColor;
+        });
+    </script>
+</body>
+</html>
