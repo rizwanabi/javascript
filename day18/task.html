@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <style>
+        .btn1{
+            /* display: flex;
+            flex-direction: row; */
+            background-color: purple;
+            padding: 1%;
+            color: cyan;
+        }
+        main{
+            height:100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center; 
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+   <main>
+       <button class="btn1" onclick="fun()">Button(1-10)</button>
+       <button class="btn1" onclick="fun1()">Button(1-100)</button>
+       <button class="btn1" onclick="fun2()">Button(1-1000)</button> 
+   </main>
+   <script>
+    
+       var btn=document.querySelector("button");
+       console.log(btn);
+       function fun(){
+           alert(Math.round(Math.random()*10));
+           console.log(Math.round(Math.random()*10));
+       }
+         
+       function fun1(){
+        alert(Math.round(Math.random()*100));
+       }
+       
+
+       function fun2(){
+        alert(Math.round(Math.random()*1000));
+       }       
+
+   </script> 
+</body>
+</html>
