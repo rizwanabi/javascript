@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+           
+            text-align: center;
+            padding: 4%;
+            box-shadow: 0 3px 5px gray;
+            border-radius: 2%;
+        }
+        #btn{
+            padding: 2%;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="quote">Click the button generate the different quotes</p>
+        <p id="author"></p>
+        <button id="btn" onclick="button()">Generate</button>
+    </div>
+    <script>
+        var quote=document.getElementById("quote");
+        // console.log(quote);
+        var author=document.getElementById("author");
+        // console.log(author);
+        var btn=document.getElementsByTagName("button")[0];
+        // console.log(btn);
+        var container=document.getElementsByClassName("container")[0];
+        // console.log(container);
+        var body=document.querySelector("body");
+        // console.log(body);
+
+        let data=[{
+            "id": 0,
+            "quote": "Thinking is the capital, Enterprise is the way, Hard Work is the solution.",
+            "author": "Abdul Kalam"
+            },
+            {
+            "id": 1,
+            "quote": "If You Can'T Make It Good, At Least Make It Look Good.",
+            "author": "Bill Gates"
+            },
+            {
+            "id": 2,
+            "quote": "Heart be brave. If you cannot be brave, just go. Love's glory is not a small thing.",
+            "author": "Rumi"
+            },
+            {
+            "id": 3,
+            "quote": "It is bad for a young man to sin; but it is worse for an old man to sin.",
+            "author": "Abu Bakr (R.A)"
+            },
+            {
+            "id": 4,
+            "quote": "If You Are Out To Describe The Truth, Leave Elegance To The Tailor.",
+            "author": "Albert Einstein"
+
+        }]
+
+        var colors=["pink","cyan","lightyellow","yellowgreen","deeppink","lightgreen"];
+
+        var colors1=["pink","cyan","lightyellow","yellowgreen","deeppink","lightgreen"];
+
+        index=0;
+        c=0
+        function button(){
+            quote.innerText=data[c]["quote"];
+            // console.log(quote);
+            author.innerText=data[c]["author"];
+            
+            // console.log(author);
+           
+             
+            container.style.backgroundColor=colors[index%colors.length];
+            c++;
+            index++;
+            if(c>=data.length){
+                c=0;
+            }
+           
+            if(index>=colors.length){
+                index=0;
+            }
+
+            body.style.backgroundcolor=colors1[index%colors1.length];
+            // index++;
+            if(index>=colors1.length){
+                index=0;
+            }
+            
+
+            // container.style.backgroundColor=
+        }
+
+    </script>
+</body>
+</html>
