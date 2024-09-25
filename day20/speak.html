@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: darkorange;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px gray;
+            padding: 5%;
+            /* max-width: 400px; */
+            width: 30%;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid brown;
+            border-radius: 10px;
+            /* outline: none; */
+            /* transition: border-color 0.3s ease; */
+        }
+
+        /* input:focus {
+            border-color: #007bff;
+        } */
+
+        #btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            /* transition: background-color 0.3s ease, box-shadow 0.3s ease; */
+        }
+
+        #btn:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+
+        /* .btn:active {
+            background-color: #004080;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input id="input"><br>
+        <button id="btn">Speak</button>
+    </div>
+    <script>
+    
+            var btn=document.getElementById("btn");
+            
+           
+            var colors=["plum","pink","cyan","wheat","lightgreen"];
+            let i=0;
+            btn.addEventListener("click",()=>{
+                   var text=document.getElementById("input");
+                   text.value=colors[i%colors.length];
+                   console.log(text.value);
+                   document.body.style.backgroundColor=colors[i%colors.length];
+                   i++;
+                   if(i>=colors.length){
+                    i=0;
+                   }
+                   var utterance=new SpeechSynthesisUtterance(text.value);
+                   speechSynthesis.speak(utterance);
+            })
+           
+        
+    </script>
+</body>
+</html>
