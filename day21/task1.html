@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #clock{
+            background-image: url("image.png");
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hour,.minute,.second{
+            border-radius: 50%;
+            background-color:black;
+            padding: 1%;
+            color: white;
+            margin: 1%;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="second"></span>
+    </div>
+    <script>
+        function fun(){
+            var hour=document.getElementsByClassName("hour")[0];
+            var Min=document.getElementsByClassName("minute")[0];
+            var second=document.getElementsByClassName("second")[0];
+            var date=new Date();
+            var hours=date.getHours().toString().padStart(2,'0');
+            var minutes=date.getMinutes().toString().padStart(2,'0');
+            var seconds=date.getSeconds().toString().padStart(2,'0');
+            hour.textContent=hours;
+            Min.textContent=`${minutes}`;
+            second.textContent=`${seconds}`;
+
+        }
+        setInterval(fun,1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Caluculator</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #date{
+            width: 18%;
+            padding: 1%;
+        }
+        .btn{
+            background-color: blueviolet;
+            color: white;
+            padding: 1%;
+        }
+        .btn:hover{
+            background-color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Age Caluculator</h1>
+    <label for="date">Select your birth date: </label><br>
+    <input type="date" id="date"><br>
+    <button onclick="fun()" class="btn">Caluculate Age</button>
+    <p id="result"></p>
+    </div>
+    <script>
+        function fun(){
+            var date=document.getElementById("date").value;
+            var birthdate=new Date(date);
+            var presentdate=new Date();
+
+
+            var years = presentdate.getFullYear() - birthdate.getFullYear();
+
+            var months = presentdate.getMonth() - birthdate.getMonth();
+
+            var days = presentdate.getDay() - birthdate.getDay();
+           
+
+            if(days<0){
+                months--;
+                var prevmonth = new Date(presentdate.getFullYear(), presentdate.getMonth(), 0);
+                days += prevmonth.getDate();
+
+            }
+            if (months < 0) {
+                years--; 
+                months += 12;
+            }
+
+            var resultText = `Age: ${years} years, ${months} months, and ${days} days.`;
+            document.getElementById("result").textContent = resultText;
+            
+            document.getElementById("result").style.fontSize="2em";
+        }
+    </script>
+</body>
+</html>
