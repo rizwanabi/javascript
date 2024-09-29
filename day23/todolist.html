@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fdf5df;
+        }
+
+        .todo-container {
+            background-color: #5ebec4;
+            padding: 3%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 4%;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: deeppink;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d6a3fb;
+        }
+
+        li {
+            background-color: #fdf5df;
+            padding: 10px;
+            border: 1px solid black;
+            margin-top: 10%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li .remove-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        li .remove-btn:hover {
+            background-color: #c82333;
+        }
+
+            </style>
+        </head>
+        <body>
+            <div class="todo-container">
+                <h1>To-Do List</h1>
+                <input type="text" id="taskInput" placeholder="Enter a task">
+                <button onclick="addTask()">Add Task</button>
+                <ul id="taskList">
+                    <!-- List of tasks will appear here -->
+                </ul>
+            </div>
+
+    <script>
+        // Function to add a new task
+        function addTask() {
+            var taskInput = document.getElementById("taskInput").value;
+            
+            if (taskInput === '') {
+                alert("Please enter a task.");
+                return;
+            }
+
+            // Create a new list item (li)
+            var li = document.createElement("li");
+
+            // Add the task text
+            li.textContent = taskInput;
+
+            // Create a remove button
+            var removeBtn = document.createElement("button");
+            removeBtn.textContent = "Remove";
+            removeBtn.classList.add("remove-btn");
+            removeBtn.onclick = function() {
+                li.remove();
+            };
+
+            // Append the remove button to the list item
+            li.appendChild(removeBtn);
+
+            // Add the list item to the task list (ul)
+            document.getElementById("taskList").appendChild(li);
+
+            // Clear the input field
+            document.getElementById("taskInput").value = '';
+        }
+
+    </script>
+</body>
+</html>
