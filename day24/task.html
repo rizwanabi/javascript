@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Stored Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #9cf6fb;
+            margin: 0;
+        }
+
+        h2 {
+            color: #394f8a;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            background-color: #e1fcfd;
+            border-left: 10px solid #e5b9a8;
+            padding: 10px;
+            margin: 10px;
+            width: 60%;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Entered Details</h2>
+    
+    <script>
+        var inp1 = localStorage.getItem("inp1");
+        var inp2 = localStorage.getItem("inp2");
+        var inp3 = localStorage.getItem("inp3");
+
+        document.body.innerHTML += `<h3>Name: ${inp1}</h3>`;
+        document.body.innerHTML += `<h3>Email: ${inp2}</h3>`;
+        document.body.innerHTML += `<h3>Phone: ${inp3}</h3>`;
+    </script>
+</body>
+</html>
