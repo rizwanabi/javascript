@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 10px;
+        }
+
+        .row > div {
+            padding: 20px;
+            background-color: #e1f2f7; 
+            transition: 
+                opacity 0.5s ease,       
+                transform 0.5s ease,     
+                background-color 0.5s ease,
+                box-shadow 0.5s ease;  
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .row > div:hover {
+            background-color: #e5bace; 
+            transform: scale(1.05); 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+        }
+
+        .row > div.removing {
+            opacity: 0; 
+            transform: scale(0.9); 
+            background-color: #f2d349; 
+            
+        }
+
+      
+        button {
+            background-color: #f2d349; 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease; 
+        }
+
+        button:hover {
+            background-color: #005f7f; 
+            transform: scale(1.1); 
+        }
+
+       
+        button:nth-child(5) {
+            background-color: #8aa899; 
+        }
+
+        button:nth-child(5):hover {
+            background-color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="butt">visitList</button>
+    </div><br>
+    <div class="row"></div>
+
+    <script>
+        let newarr = [];
+        
+        async function fun() {
+            let res = await fetch("https://fakestoreapi.com/products");
+            let data = await res.json();
+            console.log(data);
+
+            data.map((val) => {
+                var parent = document.querySelector(".row");
+                var main = document.createElement("div");
+                var IMG=document.createElement("img");
+                var child1 = document.createElement("div");
+                var child2 = document.createElement("div");
+                var child3 = document.createElement("div");
+                var btn = document.createElement("button");
+                var btn1 = document.createElement("button");
+                var butt = document.getElementById("butt");
+
+
+                IMG.src=val.image;
+                IMG.style.width="300px";
+                child1.innerText=val.id;
+                child2.innerText=val.title;
+                child3.innerText=val.description;
+
+                child1.innerText = val.id;
+                child2.innerText = val.title;
+                child3.innerText = val.description;
+               
+                
+                btn.innerText = "Add to cart";
+                btn1.innerText = "remove";
+                
+                
+
+               
+                btn.addEventListener("click", () => {
+                    newarr.push(val);
+                    localStorage.setItem("arr", JSON.stringify(newarr));
+                    console.log(newarr);
+                });
+
+                
+                btn1.addEventListener("click", () => {
+                    let confirmRemove = confirm("Do you want to remove this item?");
+                    if (confirmRemove) {
+                        main.classList.add("removing"); 
+                        setTimeout(() => {
+                            main.remove(); 
+                        }, 500); 
+                    }
+                });
+
+                
+                butt.addEventListener("click", () => {
+                    window.open("sub.html", "_self");
+                });
+
+                
+                main.append(IMG,child1, child2, child3, btn, btn1);
+                parent.appendChild(main);
+            });
+        }
+
+        fun();
+    </script>
+</body>
+</html>
