@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <!-- <div id="outer">
+        <div id="inner">
+          <button id="myButton">Click me</button>
+        </div>
+      </div>
+      
+      <script>
+        // Event listener on the outer div with capturing
+        document.getElementById('outer').addEventListener('click', function() {
+          console.log('Outer div clicked (capturing)');
+        }, true);
+      
+        // Event listener on the inner div with capturing
+        document.getElementById('inner').addEventListener('click', function() {
+          console.log('Inner div clicked (capturing)');
+        }, true);
+      
+        // Event listener on the button without capturing (using default, which is bubbling)
+        document.getElementById('myButton').addEventListener('click', function() {
+          console.log('Button clicked (bubbling)');
+        });
+      </script> -->
+    
+        <!-- <button id="btn">
+            click me
+        </button> -->
+        
+        <button onclick="newwebopen()">click me to open new window</button>;
+
+<button onclick="newwebclose()">click me to close the current window</button>
+
+
+    <!-- <script>
+    let parent=document.getElementById("parent");
+    let child=document.getElementById("child");
+
+    child.addEventListener("click", function(event){
+        event.stopPropagation()// this will prevent the bubbling to the parent
+        console.log("child is clicked");
+    })
+
+    parent.addEventListener("click", function(){
+        console.log("parent is clicked")
+    })
+    
+    </script> -->
+
+
+    <script>
+        // var button=document.getElementById("btn")
+        // button.addEventListener("click",function(){
+        //     console.log("button clicked")
+        // })
+
+        // button.onclick=function(){
+        //     console.log("button was clicked")
+        // }
+
+
+        // console.log(window)
+
+        // window.confirm("Hello")
+        // for(i in window){
+        //     console.log(i)
+        // }
+
+
+
+        // function newwebopen(){
+        //     window.open("https://www.google.com", "_parent", "width=500, height=500");
+        // }
+        // function newwebclose(){
+        //     window.close();
+        // }
+
+//         var height= window.innerHeight;
+//   var width=window.innerWidth;
+//   console.log(height,width);
+
+//   if(window.innerWidth<550){
+//     document.body.style.backgroundColor="green";
+//   }
+
+
+// if (navigator.onLine) {
+//         console.log("Browser is online.");
+//     } else {
+//         console.log("Browser is offline.");
+//     }
+
+// if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(function(position) {
+//             console.log("Latitude: " + position.coords.latitude);
+//             console.log("Longitude: " + position.coords.longitude);
+//         });
+//     } else {
+//         console.log("Geolocation is not supported by this browser.");
+//     }
+
+
+// console.log("Browser Name:", navigator.appName);
+// // Example output: "Browser Name: Netscape"
+
+// console.log("Browser Version:", navigator.appVersion);
+// // Example output: "Browser Version: 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
+
+// console.log("Platform:", navigator.platform);
+// // Example output: "Platform: Win32"
+
+// console.log("User Agent:", navigator.userAgent);
+// // Example output: "User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
+
+// console.log("Cookies Enabled:", navigator.cookieEnabled);
+// // Example output: "Cookies Enabled: true"
+
+
+
+// console.log(location.href);  
+
+// // Get the protocol (http/https)
+// console.log(location.protocol);  
+
+// // Get the hostname
+// console.log(location.hostname);  
+
+// // Get the path name
+// console.log(location.pathname);  
+
+// // Redirect to another page
+// window.location.href = "https://www.example.com";
+
+
+
+
+// console.log(history.go(2)) 
+
+
+
+// function fun(){
+//     console.log("hello");
+
+// }
+// fun()
+// setI(fun(),7000)
+
+
+
+function hello(city){
+    // console.log(this);
+    // console.log(this.age);
+    console.log(this.name,this.age,city)
+    
+}
+
+let obj={
+    name:"Riz",
+    age:21
+}
+// hello.call(obj,"hyd")
+// hello.apply(obj)
+let a=hello.bind(obj);
+a("hyd")
+
+
+
+
+    </script>
+
+      
+</body>
+</html>
